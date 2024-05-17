@@ -57,9 +57,9 @@ public class AppointmentRepositoryImpl implements AppointmentRepository {
     @Override
     public List<Appointment> getEligibleAppointmentsForExchange(LocalDateTime start, Integer customerId) {
         return appointments.stream().filter(appointment -> appointment.getStatus().equals(AppointmentStatus.SCHEDULED)
-                                                            && appointment.getCustomer().getId() != customerId
-                                                            && appointment.getStart().isAfter(start))
-                                    .toList();
+                        && appointment.getCustomer().getId() != customerId
+                        && appointment.getStart().isAfter(start))
+                .toList();
     }
 
     @Override
